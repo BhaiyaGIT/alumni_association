@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --brand: #0b5fff;
+  --bg: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-800 antialiased;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+  }
+}
+
+/* Custom classes */
+.transition-smooth{transition: all 200ms ease-in-out}
