@@ -125,7 +125,11 @@ const alumni = [
 		duration: "2015-2019",
 		image: "aaditya.jpeg",
 		marks: { tenth: "75%", twelfth: "80.4%" },
-		achievements: ["", ""],
+		achievements: [
+			"Runner-up in District-level Badminton .",
+			"Secured 3rd position in badminton in Class 12 at institutional level.",
+			"Qualified CUET and ICAR examinations for B.Sc. Agriculture programs.",
+		],
 		profession: "Pursuing graduation from Deoghar college, Deoghar, Jharkhand",
 		bio: "He studied at Bharti Vidyapeeth School from class 6 to class 10.",
 	},
@@ -255,6 +259,19 @@ const alumni = [
 		profession: "Pursuing B.Tech in ECE branch from NIT Jamshedpur, Jharkhand",
 		bio: "He studied at Bharti Vidyapeeth School in Class 5.",
 	},
+	{
+		id: 19,
+		name: "ANAMIKA",
+		batch: 2018,
+		duration:"2015-2018",
+		achievements: [
+			"Officer in Indigo Airlines"
+		],
+		image: "anamika.jpeg",
+		marks: { tenth: "N/A%", twelfth: "N/A%" },
+		profession: "Working as an Officer in Indigo Airlines",
+		bio: "She studied at Bharti Vidyapeeth School from class 7 to class 10.",
+	}
 ];
 
 export default alumni;
