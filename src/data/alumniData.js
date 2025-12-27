@@ -127,7 +127,7 @@ const alumni = [
 		marks: { tenth: "75%", twelfth: "80.4%" },
 		achievements: [
 			"Runner-up in District-level Badminton .",
-			"Secured 3rd position in badminton in Class 12 at institutional level.",
+			"Secured 3rd Rank in Class 12 at institutional level.",
 			"Qualified CUET and ICAR examinations for B.Sc. Agriculture programs.",
 		],
 		profession: "Pursuing graduation from Deoghar college, Deoghar, Jharkhand",
