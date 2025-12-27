@@ -271,7 +271,7 @@ const alumni = [
 		marks: { tenth: "N/A%", twelfth: "N/A%" },
 		profession: "Working as an Officer in Indigo Airlines",
 		bio: "She studied at Bharti Vidyapeeth School from class 7 to class 10.",
-	}
+	},
 ];
 
 export default alumni;
