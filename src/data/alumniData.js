@@ -234,8 +234,8 @@ const alumni = [
 	{
 		id: 16,
 		name: "ARYAN RAJ",
-		batch: 2025,
-		duration: "2010–2025",
+		batch: 2021,
+		duration: "2010–2021",
 		image: "aryan.jpeg",
 		marks: {
 			tenth: "80%",
