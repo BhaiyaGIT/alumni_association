@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function AlumniCard({ alum }) {
 	const imgSrc = alum?.image?.startsWith("/") ? alum.image : `/${alum?.image}`;
@@ -21,9 +22,16 @@ export default function AlumniCard({ alum }) {
 				/>
 
 				<div className="flex-1 w-full">
-					<h3 className="font-semibold text-brand text-lg">{alum?.name}</h3>
+					<Link
+						to={`/alumni/${alum?.id}`}
+						className="font-semibold text-brand text-lg hover:underline"
+					>
+						{alum?.name}
+					</Link>
 
-					<span className="text-xs text-amber-700">({alum?.duration})</span>
+					<span className="text-xs text-amber-700 ml-1">
+						({alum?.duration})
+					</span>
 
 					<div className="text-sm text-gray-900 dark:text-gray-300 mt-1">
 						{alum?.profession}

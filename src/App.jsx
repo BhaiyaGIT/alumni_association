@@ -7,6 +7,7 @@ import Sidebar from "./components/Sidebar";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Alumni from "./pages/Alumni";
+import AlumniDetail from "./pages/AlumniDetail";
 import Events from "./pages/Events";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -31,6 +32,10 @@ export default function App() {
 						<Route
 							path="/alumni"
 							element={<Alumni />}
+						/>
+						<Route
+							path="/alumni/:id"
+							element={<AlumniDetail />}
 						/>
 						<Route
 							path="/events"
