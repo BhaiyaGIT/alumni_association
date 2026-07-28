@@ -4,6 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bharti Vidyapeeth Alumni Association</title>
+    <meta
+      name="description"
+      content="Bharti Vidyapeeth Alumni Association, Deoghar — connecting former students, celebrating achievements, and building a lifelong community."
+    />
+    <meta property="og:title" content="Bharti Vidyapeeth Alumni Association" />
+    <meta
+      property="og:description"
+      content="Connecting BVP alumni worldwide — achievements, events, and community."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/school_logo.jpg" />
+    <link rel="icon" type="image/jpeg" href="/school_logo.jpg" />
+    <!-- Apply saved theme before paint to avoid a flash of the wrong theme -->
+    <script>
+      try {
+        if (localStorage.getItem("bv-dark") === "true") {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

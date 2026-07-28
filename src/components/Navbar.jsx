@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-export default function Navbar({ onToggleSidebar }) {
+export default function Navbar() {
 	const [open, setOpen] = useState(false);
 	return (
 		<nav className="bg-white dark:bg-gray-800 border-t border-b border-gray-100 dark:border-gray-700">
 			<div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 				<div className="flex items-center space-x-6">
 					<button
-						onClick={() => {
-							setOpen((o) => !o);
-							onToggleSidebar?.();
-						}}
+						onClick={() => setOpen((o) => !o)}
 						aria-label="Toggle menu"
+						aria-expanded={open}
 						className="md:hidden p-3 rounded bg-gray-100 dark:bg-gray-700 text-lg"
 					>
 						☰

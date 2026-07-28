@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-export default function Header({ onToggleDark }) {
+export default function Header() {
+	// The initial theme class is applied pre-paint in index.html (no flash).
+	// Here we only mirror that state and keep the class + localStorage in sync.
 	const [dark, setDark] = useState(() =>
 		document.documentElement.classList.contains("dark")
 	);
@@ -12,11 +14,6 @@ export default function Header({ onToggleDark }) {
 			localStorage.setItem("bv-dark", dark);
 		} catch (e) {}
 	}, [dark]);
-
-	useEffect(() => {
-		const v = localStorage.getItem("bv-dark");
-		if (v === "true") setDark(true);
-	}, []);
 
 	return (
 		<header className="w-full bg-white dark:bg-gray-800 shadow-sm">

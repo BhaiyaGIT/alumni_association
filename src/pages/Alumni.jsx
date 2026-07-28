@@ -1,10 +1,28 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import alumniData from "../data/alumniData";
 import AlumniCard from "../components/AlumniCard";
 
 export default function Alumni() {
+	const [searchParams, setSearchParams] = useSearchParams();
 	const [search, setSearch] = useState("");
-	const [batch, setBatch] = useState("all");
+	const [batch, setBatch] = useState(searchParams.get("batch") || "all");
+
+	// Keep local state in sync when the ?batch= query param changes
+	// (e.g. navigating from a Sidebar quick link).
+	useEffect(() => {
+		setBatch(searchParams.get("batch") || "all");
+	}, [searchParams]);
+
+	const onBatchChange = (value) => {
+		setBatch(value);
+		if (value === "all") {
+			searchParams.delete("batch");
+		} else {
+			searchParams.set("batch", value);
+		}
+		setSearchParams(searchParams, { replace: true });
+	};
 
 	const batches = useMemo(() => {
 		const s = new Set(alumniData.map((a) => a.batch));
@@ -32,7 +50,7 @@ export default function Alumni() {
 					<select
 						className="px-3 py-2 rounded border"
 						value={batch}
-						onChange={(e) => setBatch(e.target.value)}
+						onChange={(e) => onBatchChange(e.target.value)}
 					>
 						{batches.map((b) => (
 							<option
