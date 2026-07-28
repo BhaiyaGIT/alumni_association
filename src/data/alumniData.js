@@ -96,7 +96,7 @@ const alumni = [
 	{
 		id: 4,
 		name: "SATAKSHI SHARMA",
-		batch: 2020,
+		batch: 2019,
 		duration: "2008-2019",
 		image: "satakshi.jpeg",
 		marks: { tenth: "87%", twelfth: "84%" },
@@ -235,7 +235,7 @@ const alumni = [
 		id: 16,
 		name: "ARYAN RAJ",
 		batch: 2025,
-		duration: "2010–2021",
+		duration: "2010–2025",
 		image: "aryan.jpeg",
 		marks: {
 			tenth: "80%",
