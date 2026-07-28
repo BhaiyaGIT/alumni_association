@@ -63,51 +63,53 @@ export default function Alumni() {
 
 	return (
 		<div className="space-y-4">
-			<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+			<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
 				<h2 className="text-2xl font-semibold">Alumni</h2>
-				<div className="flex flex-wrap items-center gap-2">
+				<div className="flex flex-col sm:flex-row sm:flex-wrap gap-2">
 					<input
-						className="px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600"
+						className="w-full sm:w-auto px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600"
 						placeholder="Search by name"
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}
 					/>
-					<select
-						className="px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600"
-						value={batch}
-						onChange={(e) => onBatchChange(e.target.value)}
-						aria-label="Filter by batch"
-					>
-						{batches.map((b) => (
-							<option key={b} value={b}>
-								{b === "all" ? "All batches" : b}
-							</option>
-						))}
-					</select>
-					<select
-						className="px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600"
-						value={field}
-						onChange={(e) => setField(e.target.value)}
-						aria-label="Filter by field"
-					>
-						{fields.map((f) => (
-							<option key={f} value={f}>
-								{f === "all" ? "All fields" : f}
-							</option>
-						))}
-					</select>
-					<select
-						className="px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600"
-						value={sort}
-						onChange={(e) => setSort(e.target.value)}
-						aria-label="Sort alumni"
-					>
-						{Object.entries(SORTS).map(([key, { label }]) => (
-							<option key={key} value={key}>
-								{label}
-							</option>
-						))}
-					</select>
+					<div className="grid grid-cols-3 sm:flex gap-2">
+						<select
+							className="w-full px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600"
+							value={batch}
+							onChange={(e) => onBatchChange(e.target.value)}
+							aria-label="Filter by batch"
+						>
+							{batches.map((b) => (
+								<option key={b} value={b}>
+									{b === "all" ? "All batches" : b}
+								</option>
+							))}
+						</select>
+						<select
+							className="w-full px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600"
+							value={field}
+							onChange={(e) => setField(e.target.value)}
+							aria-label="Filter by field"
+						>
+							{fields.map((f) => (
+								<option key={f} value={f}>
+									{f === "all" ? "All fields" : f}
+								</option>
+							))}
+						</select>
+						<select
+							className="w-full px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600"
+							value={sort}
+							onChange={(e) => setSort(e.target.value)}
+							aria-label="Sort alumni"
+						>
+							{Object.entries(SORTS).map(([key, { label }]) => (
+								<option key={key} value={key}>
+									{label}
+								</option>
+							))}
+						</select>
+					</div>
 				</div>
 			</div>
 

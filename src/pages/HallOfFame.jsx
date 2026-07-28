@@ -40,7 +40,7 @@ export default function HallOfFame() {
 								<div className="font-semibold text-brand truncate">
 									{entry.alum.name}
 								</div>
-								<div className="text-sm text-gray-600 dark:text-gray-300 truncate">
+								<div className="text-sm text-gray-600 dark:text-gray-300 break-words">
 									{entry.achievement}
 								</div>
 							</div>
