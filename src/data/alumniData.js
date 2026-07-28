@@ -26,7 +26,7 @@ const alumni = [
 	},
 	{
 		id: 17,
-		image: "sdm.jpeg",
+		image: "sdm1.png",
 		profession:
 			"Preparing for BPSC , Civil Services and other competitive exams",
 		name: "SHUBHAM KUMAR",
@@ -47,15 +47,16 @@ const alumni = [
 		name: "RITIK KUMAR",
 		batch: 2019,
 		duration: "2013-2019",
-		image: "rtk.png",
+		image: "ritik_self.png",
 		marks: { tenth: "93.4%", twelfth: "75.2%" },
 		achievements: [
 			"JEE MAINS Rank: 17,124 (AIR)",
 			"JEE ADVANCED Rank: 22,071 (AIR)",
 			"WBJEE Rank: 748 (AIR)",
 			//"NDA Written qualified 4 times",
-			"Selected as Software Engineering Intern Role at Toast",
 			"Selected as Software Development Engineer Intern in Amazon",
+			"Served as Software Engineering Intern at Toast (January 2026-June 2026)",
+			"Serving as Software Engineer I at Toast Inc. (July 2026-Present)",
 		],
 		profession: "Pursuing B.Tech in CSE branch from NIT Jamshedpur, Jharkhand",
 		bio: "He studied at Bharti Vidyapeeth School from class 5 to class 10.", // Optional focal point (percentage): { x: 50, y: 30 } centers higher to show face better on mobile

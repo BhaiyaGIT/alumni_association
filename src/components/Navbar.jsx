@@ -43,6 +43,26 @@ export default function Navbar() {
 							Events
 						</NavLink>
 						<NavLink
+							to="/hall-of-fame"
+							className={({ isActive }) =>
+								isActive
+									? "text-brand font-medium"
+									: "text-gray-600 dark:text-gray-300"
+							}
+						>
+							Hall of Fame
+						</NavLink>
+						<NavLink
+							to="/gallery"
+							className={({ isActive }) =>
+								isActive
+									? "text-brand font-medium"
+									: "text-gray-600 dark:text-gray-300"
+							}
+						>
+							Gallery
+						</NavLink>
+						<NavLink
 							to="/about"
 							className={({ isActive }) =>
 								isActive
@@ -91,6 +111,20 @@ export default function Navbar() {
 						className="block py-3 text-base"
 					>
 						Events
+					</NavLink>
+					<NavLink
+						to="/hall-of-fame"
+						onClick={() => setOpen(false)}
+						className="block py-3 text-base"
+					>
+						Hall of Fame
+					</NavLink>
+					<NavLink
+						to="/gallery"
+						onClick={() => setOpen(false)}
+						className="block py-3 text-base"
+					>
+						Gallery
 					</NavLink>
 					<NavLink
 						to="/about"

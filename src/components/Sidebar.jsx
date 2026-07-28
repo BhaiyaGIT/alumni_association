@@ -23,12 +23,20 @@ export default function Sidebar() {
 					</Link>
 				</li>
 				<li>
-					<a
-						href="#gallery"
+					<Link
+						to="/hall-of-fame"
+						className="hover:text-brand transition-smooth"
+					>
+						Hall of Fame
+					</Link>
+				</li>
+				<li>
+					<Link
+						to="/gallery"
 						className="hover:text-brand transition-smooth"
 					>
 						Gallery
-					</a>
+					</Link>
 				</li>
 			</ul>
 		</aside>

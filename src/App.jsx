@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Alumni from "./pages/Alumni";
 import AlumniDetail from "./pages/AlumniDetail";
 import Events from "./pages/Events";
+import HallOfFame from "./pages/HallOfFame";
+import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -40,6 +42,14 @@ export default function App() {
 						<Route
 							path="/events"
 							element={<Events />}
+						/>
+						<Route
+							path="/hall-of-fame"
+							element={<HallOfFame />}
+						/>
+						<Route
+							path="/gallery"
+							element={<Gallery />}
 						/>
 						<Route
 							path="/about"

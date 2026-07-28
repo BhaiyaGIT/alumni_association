@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slideshow from "../components/Slideshow";
 import Newsletter from "../components/Newsletter";
+import NoticeBoard from "../components/NoticeBoard";
 import alumni from "../data/alumniData";
 import events from "../data/eventsData";
 
@@ -56,11 +58,18 @@ export default function Home() {
 
 			{/* <Newsletter /> */}
 
+			<NoticeBoard />
+
 			<section
 				id="gallery"
 				className="bg-white dark:bg-gray-800 rounded p-6 shadow-sm"
 			>
-				<h3 className="text-lg font-semibold mb-3">Gallery Highlights</h3>
+				<div className="flex items-center justify-between mb-3">
+					<h3 className="text-lg font-semibold">Gallery Highlights</h3>
+					<Link to="/gallery" className="text-sm text-brand hover:underline">
+						View all →
+					</Link>
+				</div>
 				<div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
 					{slides.map((s, i) => (
 						<img

@@ -29,3 +29,47 @@ export function getAllFields() {
 export function getAlumById(id) {
 	return alumniData.find((a) => String(a.id) === String(id));
 }
+
+// Exam types we recognise for the Hall of Fame, in display priority order.
+const EXAM_PATTERNS = [
+	{ exam: "UPSC", re: /upsc[^.]*/i },
+	{ exam: "NEET", re: /neet[^.]*rank[^.]*?([\d,]+)/i },
+	{ exam: "JEE Advanced", re: /jee\s*advanced[^.]*?([\d,]+)/i },
+	{ exam: "JEE Mains", re: /jee\s*mains?[^.]*?([\d,]+)/i },
+	{ exam: "CLAT", re: /clat[^.]*?([\d,]+)/i },
+	{ exam: "WBJEE", re: /wbjee[^.]*?([\d,]+)/i },
+	{ exam: "GATE", re: /gate[^.]*/i },
+];
+
+// Parse a rank number ("22,071") to an integer for sorting; NaN if none.
+function parseRank(text) {
+	const m = text.replace(/,/g, "").match(/(\d{2,})/);
+	return m ? parseInt(m[1], 10) : NaN;
+}
+
+// Build Hall of Fame entries: for each alum, find their best (lowest-rank)
+// recognised competitive-exam achievement. Alumni with no match are excluded.
+// Returned sorted by rank ascending (unranked qualifiers like UPSC/GATE last).
+export function getHallOfFame() {
+	const entries = [];
+
+	for (const alum of alumniData) {
+		let best = null;
+		for (const achievement of alum.achievements || []) {
+			for (const { exam, re } of EXAM_PATTERNS) {
+				if (re.test(achievement)) {
+					const rank = parseRank(achievement);
+					if (!best || (!isNaN(rank) && rank < best.rank)) {
+						best = { exam, rank: isNaN(rank) ? Infinity : rank, achievement };
+					}
+					break; // first matching pattern wins for this achievement
+				}
+			}
+		}
+		if (best) {
+			entries.push({ alum, ...best });
+		}
+	}
+
+	return entries.sort((a, b) => a.rank - b.rank);
+}
