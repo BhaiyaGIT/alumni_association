@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import ScrollToTop from "./components/ScrollToTop";
+import PageTransition from "./components/PageTransition";
 import Home from "./pages/Home";
 import Alumni from "./pages/Alumni";
 import AlumniDetail from "./pages/AlumniDetail";
@@ -26,6 +27,7 @@ export default function App() {
 					<Sidebar />
 				</div>
 				<main className="w-full md:w-3/4 lg:w-4/5">
+					<PageTransition>
 					<Routes>
 						<Route
 							path="/"
@@ -64,6 +66,7 @@ export default function App() {
 							element={<NotFound />}
 						/>
 					</Routes>
+					</PageTransition>
 				</main>
 			</div>
 			<Footer />

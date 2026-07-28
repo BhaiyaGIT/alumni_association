@@ -16,3 +16,17 @@
 
 /* Custom classes */
 .transition-smooth{transition: all 200ms ease-in-out}
+
+/* Fade in each routed page */
+.page-enter{animation: fadeIn 0.35s ease-out both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}

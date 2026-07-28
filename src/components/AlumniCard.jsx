@@ -5,7 +5,7 @@ export default function AlumniCard({ alum }) {
 	const imgSrc = alum?.image?.startsWith("/") ? alum.image : `/${alum?.image}`;
 
 	return (
-		<div className="bg-slate-100 dark:bg-gray-800 rounded shadow-sm p-4 hover:shadow-md transition-all duration-300">
+		<div className="bg-slate-100 dark:bg-gray-800 rounded shadow-sm p-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 animate-fadeInUp">
 			<div className="flex flex-col md:flex-row items-start md:items-center gap-4">
 				{/* image focal support: alum.focal can be string like "center top" or { x: 50, y: 40 } percentages */}
 				<img
